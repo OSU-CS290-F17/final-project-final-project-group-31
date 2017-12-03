@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movier</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:100" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <header>
+
+      <div class="header-image-container">
+        <img src="TV.jpg" alt="TV Logo" title= "TV Logo">
+      </div>
+
+      <h1 class="site-title"><a href="#">Corvallis Movie</a></h1>
+
+    </header>
+
+    <main class="content">
+      <aside class="filter-container">
+
+        <h2>Filters</h2>
+
+        <div class="filter-input-container">
+          <label for="filter-name" class="filter-input-label">Name</label>
+          <input type="name" name="filter-name" id="filter-name" class="filter-input">
+        </div>
+
+        <div class="filter-input-container">
+          <label for="filter-min-price" class="filter-input-label">Price</label>
+          <input type="text" name="filter-min-price" id="filter-min-price" class="filter-input" placeholder="min">
+          <input type="text" name="filter-max-price" id="filter-max-price" class="filter-input" placeholder="max">
+        </div>
+
+        <div class="filter-input-container">
+          <label for="filter-type">City</label>
+          <select id="filter-type" class="filter-input" name="filter-type">
+            <option selected value="">Any</option>
+            <option>Action</option>
+            <option>Comedy</option>
+            <option>Crime</option>
+            <option>Horror</option>
+            <option>Romans</option>
+            <option>Science-fiction</option>
+          </select>
+        </div>
+
+        <div class="filter-input-container">
+          <fieldset id="filter-condition" class="filter-fieldset">
+            <legend>Rate</legend>
+            <div>
+              <input type="checkbox" name="filter-condition" id="filter-condition-new" value="horrible">
+              <label for="filter-condition-new">Horrible</label>
+            </div>
+            <div>
+              <input type="checkbox" name="filter-condition" id="filter-condition-excellent" value="bad">
+              <label for="filter-condition-excellent">Bad</label>
+            </div>
+            <div>
+              <input type="checkbox" name="filter-condition" id="filter-condition-good" value="fair">
+              <label for="filter-condition-good">Fair</label>
+            </div>
+            <div>
+              <input type="checkbox" name="filter-condition" id="filter-condition-fair" value="good">
+              <label for="filter-condition-fair">Good</label>
+            </div>
+            <div>
+              <input type="checkbox" name="filter-condition" id="filter-condition-poor" value="excellent">
+              <label for="filter-condition-poor">Excellent</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <button id="filter-search-button" class="action-button">Search</button>
+
+      </aside>
+
+      <section id="results">
+
+        <div class="result">
+          <div class="result-contents">
+            <div class="result-image-container">
+              <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRlGeugacRkKznDOtRhUCVt0AkrOTPbaaKwF9xgGZgNViyC_Xko" alt="Avengers2">
+            </div>
+            <div class="result-info-container">
+              <a href="#" class="result-title">Avengers2</a> <span class="result-price">$100</span> <span class="result-type">(Action)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-contents">
+            <div class="result-image-container">
+              <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcQhYjUIu2o5v5u3rfJpCq5Cz0Q9WK--XdYxai_N2d0ImohPiIOp" alt="Titanic">
+            </div>
+            <div class="result-info-container">
+              <a href="#" class="result-title">Titanic</a> <span class="result-price">$20</span> <span class="result-type">(Romans)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-contents">
+            <div class="result-image-container">
+              <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcStk75A_FacVc2kXVb8vdTAU6x-fmRjV2X0-6yxHF5iksQmzKwB"alt="Despicable Me">
+            </div>
+            <div class="result-info-container">
+              <a href="#" class="result-title">Despicable Me</a> <span class="result-price">$60</span> <span class="result-type">(Comedy)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-contents">
+            <div class="result-image-container">
+              <img src="https://en.wikipedia.org/wiki/Pacific_Rim_(film)#/media/File:Pacific_Rim_FilmPoster.jpeg" alt="Pacific Rim">
+            </div>
+            <div class="result-info-container">
+              <a href="#" class="result-title">Pacific Rim</a> <span class="result-price">$250</span> <span class="result-type">(Science-fiction)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-contents">
+            <div class="result-image-container">
+              <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcQnHDbJFDDZYC5g9gHa6-NqBE8JUet_iRIPXJym8CtaHsVQa76M" alt="The Conjuring">
+            </div>
+            <div class="result-info-container">
+              <a href="#" class="result-title">The Conjuring</a> <span class="result-price">$40</span> <span class="result-type">(Horror)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-contents">
+            <div class="result-image-container">
+              <img src="" alt="Baby Driver">
+            </div>
+            <div class="result-info-container">
+              <a href="#" class="result-title">Baby Driver</a> <span class="result-price">$120</span> <span class="result-type">(Comedy)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-contents">
+            <div class="result-image-container">
+              <img src="" alt="Kong Fu Hustle">
+            </div>
+            <div class="result-info-container">
+              <a href="#" class="result-title">功夫Kong Fu Hustle</a> <span class="result-price">$200</span> <span class="result-type">(Action)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-contents">
+            <div class="result-image-container">
+              <img src="" alt="Central Intelligence">
+            </div>
+            <div class="result-info-container">
+              <a href="#" class="result-title">Central Intelligence</a> <span class="result-price">$80</span> <span class="result-type">(Comedy)</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <button type="button" id="sell-something-button"><i class="fa fa-plus"></i></button>
+
+  </body>
+</html>
