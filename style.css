@@ -17,10 +17,16 @@ header {
   align-items: center;
   display: flex;
   position: relative;
+  
 }
 
 header a {
   color: #fff;
+}
+
+.header-image-container img {
+  max-height: 400px;
+  max-width: 600px;
 }
 
 .site-title {
@@ -92,11 +98,11 @@ header a {
   color: #333;
 }
 
-#filter-search-button {
+#filter-update-button {
   width: 100%;
 }
 
-.result {
+.post {
   display: inline-block;
   vertical-align: top;
   height: 300px;
@@ -107,7 +113,7 @@ header a {
   border-radius: 3px;
 }
 
-.result-contents {
+.post-contents {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,17 +121,22 @@ header a {
   width: 100%;
 }
 
-.result-image-container img {
+.post-image-container img {
   max-height: 240px;
   max-width: 300px;
 }
 
-.result-info-container {
+.post-info-container {
   width: 100%;
   margin-top: 20px;
 }
 
-.result-price {
+.header-image-container img {
+  max-height: 240px;
+  max-width: 300px;
+}  
+
+.post-price {
   display: inline-block;
   font-size: 80%;
   padding: 3px;
@@ -227,27 +238,27 @@ header a {
   padding: 20px;
 }
 
-.result-input-element {
+.post-input-element {
   display: flex;
   align-items: center;
   font-size: 20px;
   margin: 10px 0;
 }
 
-.result-input-element > label {
+.post-input-element > label {
   font-weight: 600;
   flex: 1 75px;
   margin-right: 10px;
 }
 
-.result-input-element input {
+.post-input-element input {
   flex: 6 200px;
   padding: 8px;
   font-size: 20px;
   border: 1px solid #aaa;
 }
 
-.result-fieldset {
+.post-fieldset {
   flex: 1 100%;
   border: 1px solid #ababab;
 }

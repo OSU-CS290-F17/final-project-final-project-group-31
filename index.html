@@ -2,10 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Movier</title>
+    <title>Benny's List</title>
 
+    <!-- This is a 3rd-party stylesheet to make available the font families to be used for this page. -->
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:100" rel="stylesheet">
 
+    <!-- This is a 3rd-party stylesheet to include Font Awesome icons: http://fontawesome.io/ -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
 
     <link rel="stylesheet" href="style.css">
@@ -15,10 +17,10 @@
     <header>
 
       <div class="header-image-container">
-        <img src="TV.jpg" alt="TV Logo" title= "TV Logo">
+        <img src="psb.jpg" alt="Benny logo">
       </div>
 
-      <h1 class="site-title"><a href="#">Corvallis Movie</a></h1>
+      <h1 class="site-title"><a href="#">Movie Site</a></h1>
 
     </header>
 
@@ -28,148 +30,128 @@
         <h2>Filters</h2>
 
         <div class="filter-input-container">
-          <label for="filter-name" class="filter-input-label">Name</label>
-          <input type="name" name="filter-name" id="filter-name" class="filter-input">
+          <label for="filter-text" class="filter-input-label">Name</label>
+          <input type="text" name="filter-text" id="filter-text" class="filter-input">
         </div>
 
         <div class="filter-input-container">
           <label for="filter-min-price" class="filter-input-label">Price</label>
-          <input type="text" name="filter-min-price" id="filter-min-price" class="filter-input" placeholder="min">
-          <input type="text" name="filter-max-price" id="filter-max-price" class="filter-input" placeholder="max">
+          <input type="number" name="filter-min-price" id="filter-min-price" class="filter-input" placeholder="min">
+          <input type="number" name="filter-max-price" id="filter-max-price" class="filter-input" placeholder="max">
         </div>
 
         <div class="filter-input-container">
-          <label for="filter-type">City</label>
-          <select id="filter-type" class="filter-input" name="filter-type">
+          <label for="filter-city">Type</label>
+          <select id="filter-city" class="filter-input" name="filter-city">
             <option selected value="">Any</option>
             <option>Action</option>
             <option>Comedy</option>
             <option>Crime</option>
             <option>Horror</option>
             <option>Romans</option>
-            <option>Science-fiction</option>
+            <option>Science fiction</option>
           </select>
         </div>
 
         <div class="filter-input-container">
           <fieldset id="filter-condition" class="filter-fieldset">
-            <legend>Rate</legend>
+            <legend>Condition</legend>
             <div>
-              <input type="checkbox" name="filter-condition" id="filter-condition-new" value="horrible">
-              <label for="filter-condition-new">Horrible</label>
+              <input type="checkbox" name="filter-condition" id="filter-condition-new" value="bad">
+              <label for="filter-condition-new">Bad</label>
             </div>
             <div>
-              <input type="checkbox" name="filter-condition" id="filter-condition-excellent" value="bad">
-              <label for="filter-condition-excellent">Bad</label>
+              <input type="checkbox" name="filter-condition" id="filter-condition-excellent" value="excellent">
+              <label for="filter-condition-excellent">Excellent</label>
             </div>
             <div>
-              <input type="checkbox" name="filter-condition" id="filter-condition-good" value="fair">
-              <label for="filter-condition-good">Fair</label>
+              <input type="checkbox" name="filter-condition" id="filter-condition-good" value="good">
+              <label for="filter-condition-good">Good</label>
             </div>
             <div>
-              <input type="checkbox" name="filter-condition" id="filter-condition-fair" value="good">
-              <label for="filter-condition-fair">Good</label>
+              <input type="checkbox" name="filter-condition" id="filter-condition-fair" value="fair">
+              <label for="filter-condition-fair">Fair</label>
             </div>
             <div>
-              <input type="checkbox" name="filter-condition" id="filter-condition-poor" value="excellent">
-              <label for="filter-condition-poor">Excellent</label>
+              <input type="checkbox" name="filter-condition" id="filter-condition-poor" value="terrible">
+              <label for="filter-condition-poor">terrible</label>
             </div>
           </fieldset>
         </div>
 
-        <button id="filter-search-button" class="action-button">Search</button>
+        <button id="filter-update-button" class="action-button">Search</button>
 
       </aside>
 
-      <section id="results">
+      <section id="posts">
 
-        <div class="result">
-          <div class="result-contents">
-            <div class="result-image-container">
-              <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcRlGeugacRkKznDOtRhUCVt0AkrOTPbaaKwF9xgGZgNViyC_Xko" alt="Avengers2">
+        <div class="post" data-price="50" data-city="Eugene" data-condition="good">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2810102360,3099581815&fm=27&gp=0.jpg" alt="Super nice laptop">
             </div>
-            <div class="result-info-container">
-              <a href="#" class="result-title">Avengers2</a> <span class="result-price">$100</span> <span class="result-type">(Action)</span>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Avengers: Age of Ultron</a> <span class="post-price">$50</span> <span class="post-city">(Eugene)</span>
             </div>
           </div>
         </div>
 
-        <div class="result">
-          <div class="result-contents">
-            <div class="result-image-container">
-              <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcQhYjUIu2o5v5u3rfJpCq5Cz0Q9WK--XdYxai_N2d0ImohPiIOp" alt="Titanic">
+        <div class="post" data-price="20" data-city="Corvallis" data-condition="bad">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95131621ccbf6c81e33a24badd57da50/9345d688d43f8794ad53ba67d21b0ef41ad53ace.jpg" alt="Platypus Trophy">
             </div>
-            <div class="result-info-container">
-              <a href="#" class="result-title">Titanic</a> <span class="result-price">$20</span> <span class="result-type">(Romans)</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="result">
-          <div class="result-contents">
-            <div class="result-image-container">
-              <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcStk75A_FacVc2kXVb8vdTAU6x-fmRjV2X0-6yxHF5iksQmzKwB"alt="Despicable Me">
-            </div>
-            <div class="result-info-container">
-              <a href="#" class="result-title">Despicable Me</a> <span class="result-price">$60</span> <span class="result-type">(Comedy)</span>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Friday the 13th</a> <span class="post-price">$20</span> <span class="post-city">(Corvallis)</span>
             </div>
           </div>
         </div>
 
-        <div class="result">
-          <div class="result-contents">
-            <div class="result-image-container">
-              <img src="https://en.wikipedia.org/wiki/Pacific_Rim_(film)#/media/File:Pacific_Rim_FilmPoster.jpeg" alt="Pacific Rim">
+        <div class="post" data-price="100" data-city="Portland" data-condition="fair">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike180%2C5%2C5%2C180%2C60/sign=32d7aaa7b1b7d0a26fc40ccfaa861d6c/b58f8c5494eef01fa5caded0e3fe9925bd317dcd.jpg" alt="Very large pile of interesting donuts">
             </div>
-            <div class="result-info-container">
-              <a href="#" class="result-title">Pacific Rim</a> <span class="result-price">$250</span> <span class="result-type">(Science-fiction)</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="result">
-          <div class="result-contents">
-            <div class="result-image-container">
-              <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcQnHDbJFDDZYC5g9gHa6-NqBE8JUet_iRIPXJym8CtaHsVQa76M" alt="The Conjuring">
-            </div>
-            <div class="result-info-container">
-              <a href="#" class="result-title">The Conjuring</a> <span class="result-price">$40</span> <span class="result-type">(Horror)</span>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Shaun of the Dead</a> <span class="post-price">$100</span> <span class="post-city">(Portland)</span>
             </div>
           </div>
         </div>
 
-        <div class="result">
-          <div class="result-contents">
-            <div class="result-image-container">
-              <img src="" alt="Baby Driver">
+        <div class="post" data-price="15" data-city="Salem" data-condition="good">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=8d2708eddd2a6059461de948495d5ffe/4034970a304e251f49e200dcad86c9177f3e53f9.jpg" alt="Oregon laws">
             </div>
-            <div class="result-info-container">
-              <a href="#" class="result-title">Baby Driver</a> <span class="result-price">$120</span> <span class="result-type">(Comedy)</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="result">
-          <div class="result-contents">
-            <div class="result-image-container">
-              <img src="" alt="Kong Fu Hustle">
-            </div>
-            <div class="result-info-container">
-              <a href="#" class="result-title">功夫Kong Fu Hustle</a> <span class="result-price">$200</span> <span class="result-type">(Action)</span>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Titanic</a> <span class="post-price">$15</span> <span class="post-city">(Salem)</span>
             </div>
           </div>
         </div>
 
-        <div class="result">
-          <div class="result-contents">
-            <div class="result-image-container">
-              <img src="" alt="Central Intelligence">
+        <div class="post" data-price="19" data-city="Bend" data-condition="excellent">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="http://pic.baike.soso.com/ugc/baikepic2/13035/20160810053944-1683771096.jpg/800" alt="Sunshine">
             </div>
-            <div class="result-info-container">
-              <a href="#" class="result-title">Central Intelligence</a> <span class="result-price">$80</span> <span class="result-type">(Comedy)</span>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Mission: Impossible</a> <span class="post-price">$19</span> <span class="post-city">(Bend)</span>
             </div>
           </div>
         </div>
+
+        <div class="post" data-price="99" data-city="Portland" data-condition="bad">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D22%2C0%2C654%2C431%3Bc0%3Dbaike80%2C5%2C5%2C80%2C26/sign=a49584889a45d688b74de8e499f04f32/7a899e510fb30f2425cfa1b8c095d143ad4b0337.jpg" alt="Hipsters">
+            </div>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Assassins Creed Lineage</a> <span class="post-price">$99</span> <span class="post-city">(Portland)</span>
+            </div>
+          </div>
+        </div>
+
+       
 
       </section>
 
@@ -177,5 +159,74 @@
 
     <button type="button" id="sell-something-button"><i class="fa fa-plus"></i></button>
 
+    <div id="modal-backdrop" class="hidden"></div>
+    <div id="sell-something-modal" class="hidden">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h3>Sell something on Benny's List</h3>
+          <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="post-input-element">
+            <label for="post-text-input">Item description</label>
+            <input type="text" id="post-text-input"></input>
+          </div>
+
+          <div class="post-input-element">
+            <label for="post-photo-input">Photo URL</label>
+            <input type="text" id="post-photo-input">
+          </div>
+
+          <div class="post-input-element">
+            <label for="post-price-input">Selling price ($)</label>
+            <input type="number" id="post-price-input">
+          </div>
+
+          <div class="post-input-element">
+            <label for="post-city-input">City</label>
+            <input type="text" id="post-city-input">
+          </div>
+
+          <div class="post-input-element">
+            <fieldset id="post-condition-fieldset" class="post-fieldset">
+              <legend>Condition</legend>
+              <div>
+                <input type="radio" name="post-condition" id="post-condition-new" value="bad" checked>
+                <label for="post-condition-new">Bad</label>
+              </div>
+              <div>
+                <input type="radio" name="post-condition" id="post-condition-excellent" value="excellent">
+                <label for="post-condition-excellent">Excellent</label>
+              </div>
+              <div>
+                <input type="radio" name="post-condition" id="post-condition-good" value="good">
+                <label for="post-condition-good">Good</label>
+              </div>
+              <div>
+                <input type="radio" name="post-condition" id="post-condition-fair" value="fair">
+                <label for="post-condition-fair">Fair</label>
+              </div>
+              <div>
+                <input type="radio" name="post-condition" id="post-condition-poor" value="terrible">
+                <label for="post-condition-poor">Terrible</label>
+              </div>
+            </fieldset>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
+          <button type="button" id="modal-accept" class="action-button">Create Post</button>
+        </div>
+
+      </div>
+    </div>
+
   </body>
+
+  <script src="index.js" charset="utf-8"></script>
 </html>
