@@ -12,7 +12,7 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
 var data = require('./postData.json');
-
+var MongoClient = require('mongodb').MongoClient;
 /*added************************************/
 var mongoHost = process.env.MONGO_HOST;
 var mongoPort = process.env.MONGO_PORT || 27017;
