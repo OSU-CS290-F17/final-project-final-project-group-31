@@ -2,32 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Benny's List</title>
+    <title>Your Movie Theater</title>
 
-    <!-- This is a 3rd-party stylesheet to make available the font families to be used for this page. -->
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:100" rel="stylesheet">
 
-    <!-- This is a 3rd-party stylesheet to include Font Awesome icons: http://fontawesome.io/ -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="/index.js" charset="utf-8" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.min.js"></script>
+    <script src="/templates/templates.js"></script>
   </head>
   <body>
 
     <header>
 
       <div class="header-image-container">
-        <img src="psb.jpg" alt="Benny logo">
+        <img src="psb.jpg" alt="Movie logo">
       </div>
 
-      <h1 class="site-title"><a href="#">Movie Site</a></h1>
+      <h1 class="site-title"><a href="/">Movie Site</a></h1>
+      <h5 class="site-information"><a href="/">Ticket information</a></h1>
 
     </header>
 
     <main class="content">
       <aside class="filter-container">
 
-        <h2>Filters</h2>
+        <h2>Media Library</h2>
 
         <div class="filter-input-container">
           <label for="filter-text" class="filter-input-label">Name</label>
@@ -55,26 +58,26 @@
 
         <div class="filter-input-container">
           <fieldset id="filter-condition" class="filter-fieldset">
-            <legend>Condition</legend>
-            <div>
-              <input type="checkbox" name="filter-condition" id="filter-condition-new" value="bad">
-              <label for="filter-condition-new">Bad</label>
-            </div>
+            <legend>Rate</legend>
             <div>
               <input type="checkbox" name="filter-condition" id="filter-condition-excellent" value="excellent">
-              <label for="filter-condition-excellent">Excellent</label>
+              <label for="filter-condition-excellent">Excellent ★★★★★</label>
             </div>
             <div>
               <input type="checkbox" name="filter-condition" id="filter-condition-good" value="good">
-              <label for="filter-condition-good">Good</label>
+              <label for="filter-condition-good">Good ★★★★</label>
             </div>
             <div>
               <input type="checkbox" name="filter-condition" id="filter-condition-fair" value="fair">
-              <label for="filter-condition-fair">Fair</label>
+              <label for="filter-condition-fair">Fair ★★★</label>
             </div>
             <div>
-              <input type="checkbox" name="filter-condition" id="filter-condition-poor" value="terrible">
-              <label for="filter-condition-poor">terrible</label>
+              <input type="checkbox" name="filter-condition" id="filter-condition-new" value="new">
+              <label for="filter-condition-new">Bad ★★</label>
+            </div>
+            <div>
+              <input type="checkbox" name="filter-condition" id="filter-condition-poor" value="poor">
+              <label for="filter-condition-poor">Poor ★</label>
             </div>
           </fieldset>
         </div>
@@ -85,73 +88,139 @@
 
       <section id="posts">
 
-        <div class="post" data-price="50" data-city="Eugene" data-condition="good">
+        <div class="post" data-price="500" data-city="Action" data-condition="good">
           <div class="post-contents">
             <div class="post-image-container">
-              <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2810102360,3099581815&fm=27&gp=0.jpg" alt="Super nice laptop">
+              <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2810102360,3099581815&fm=27&gp=0.jpg" alt="Avengers: Age of Ultron">
             </div>
             <div class="post-info-container">
-              <a href="#" class="post-title">Avengers: Age of Ultron</a> <span class="post-price">$50</span> <span class="post-city">(Eugene)</span>
+             <a href="#" class="post-title">Avengers: Age of Ultron(2015)</a> <span class="post-price">$500</span> <span class="post-city">Action</span>
+		<p>1hr 47mins</p>
+		<p>Movie Storyline: When Tony Stark jump-starts a dormant peacekeeping program</p>
+		<p>things go terribly awry, forcing him, Thor (Chris Hemsworth)</p>
+		<p>the Incredible Hulk (Mark Ruffalo) and the rest of the Avengers to reassemble.</p>
+		<p>As the fate of Earth hangs in the balance, the team is put to the</p>
+		<p>ultimate test as they battle Ultron, a technological terror hell-bent on......</p>
             </div>
           </div>
         </div>
 
-        <div class="post" data-price="20" data-city="Corvallis" data-condition="bad">
+        <div class="post" data-price="20" data-city="Horror" data-condition="excellent">
           <div class="post-contents">
             <div class="post-image-container">
-              <img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95131621ccbf6c81e33a24badd57da50/9345d688d43f8794ad53ba67d21b0ef41ad53ace.jpg" alt="Platypus Trophy">
+              <img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95131621ccbf6c81e33a24badd57da50/9345d688d43f8794ad53ba67d21b0ef41ad53ace.jpg" alt="Friday the 13th">
             </div>
             <div class="post-info-container">
-              <a href="#" class="post-title">Friday the 13th</a> <span class="post-price">$20</span> <span class="post-city">(Corvallis)</span>
+              <a href="#" class="post-title">Friday the 13th(1980)</a> <span class="post-price">$20</span> <span class="post-city">Horror</span>
+		<p>1hr 35mins</p>
+		<p>Movie Storyline: Crystal Lake's history of murder doesn't deter counselors</p>
+		<p>from setting up a summer camp in the woodsy area. Superstitious locals warn </p>
+		<p>against it, but the fresh-faced young people -- Jack, Alice, Bill, Marcie and Ned</p>
+		<p>-- pay little heed to the old-timers. Then they find themselves stalked by a </p>
+		<p>brutal killer. As they're slashed, shot and stabbed, the counselors struggle to......</p>
             </div>
           </div>
         </div>
 
-        <div class="post" data-price="100" data-city="Portland" data-condition="fair">
+        <div class="post" data-price="100" data-city="Comedy" data-condition="poor">
           <div class="post-contents">
             <div class="post-image-container">
-              <img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike180%2C5%2C5%2C180%2C60/sign=32d7aaa7b1b7d0a26fc40ccfaa861d6c/b58f8c5494eef01fa5caded0e3fe9925bd317dcd.jpg" alt="Very large pile of interesting donuts">
+              <img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike180%2C5%2C5%2C180%2C60/sign=32d7aaa7b1b7d0a26fc40ccfaa861d6c/b58f8c5494eef01fa5caded0e3fe9925bd317dcd.jpg" alt="Shaun of the Dead">
             </div>
             <div class="post-info-container">
-              <a href="#" class="post-title">Shaun of the Dead</a> <span class="post-price">$100</span> <span class="post-city">(Portland)</span>
+              <a href="#" class="post-title">Shaun of the Dead(2004)</a> <span class="post-price">$100</span> <span class="post-city">Comedy</span>
+		<p>1hr 40mins</p>
+		<p>Movie Storyline: Shaun (Simon Pegg) is a 30-something loser with a dull,</p>
+		<p>easy existence. When he's not working at the electronics store, he lives</p>
+		<p>with his slovenly best friend, Ed (Nick Frost), in a small flat on the</p>
+		<p>outskirts of London. The only unpredictable element in his life is his</p>
+		<p>girlfriend, Liz (Kate Ashfield), who wishes desperately for Shaun to grow like a man.....</p>
             </div>
           </div>
         </div>
 
-        <div class="post" data-price="15" data-city="Salem" data-condition="good">
+        <div class="post" data-price="250" data-city="Romans" data-condition="fair">
           <div class="post-contents">
             <div class="post-image-container">
-              <img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=8d2708eddd2a6059461de948495d5ffe/4034970a304e251f49e200dcad86c9177f3e53f9.jpg" alt="Oregon laws">
+              <img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=8d2708eddd2a6059461de948495d5ffe/4034970a304e251f49e200dcad86c9177f3e53f9.jpg" alt="Titanic">
             </div>
             <div class="post-info-container">
-              <a href="#" class="post-title">Titanic</a> <span class="post-price">$15</span> <span class="post-city">(Salem)</span>
+              <a href="#" class="post-title">Titanic(1997)</a> <span class="post-price">$250</span> <span class="post-city">Romans</span>
+		<p>3hr 15min</p>
+		<p>Movie Storyline: James Cameron's "Titanic" is an epic, action-packed romance set</p>
+		<p>against the ill-fated maiden voyage of the R.M.S. Titanic; the pride and joy of the</p>
+		<p>White Star Line and, at the time, the largest moving object ever built. She was the most</p>
+		<p>luxurious liner of her era -- the "ship of dreams" -- which ultimately carried over 1,500</p> 		<p>people to their death in the ice cold waters of the North Atlantic in the early hours of....</p>
             </div>
           </div>
         </div>
 
-        <div class="post" data-price="19" data-city="Bend" data-condition="excellent">
+        <div class="post" data-price="1" data-city="Crime" data-condition="new">
           <div class="post-contents">
             <div class="post-image-container">
-              <img src="http://pic.baike.soso.com/ugc/baikepic2/13035/20160810053944-1683771096.jpg/800" alt="Sunshine">
+              <img src="http://pic.baike.soso.com/ugc/baikepic2/13035/20160810053944-1683771096.jpg/800" alt="Mission: Impossible">
             </div>
             <div class="post-info-container">
-              <a href="#" class="post-title">Mission: Impossible</a> <span class="post-price">$19</span> <span class="post-city">(Bend)</span>
+              <a href="#" class="post-title">Mission: Impossible(1996)</a> <span class="post-price">$1</span> <span class="post-city">Crime</span>
+		<p>1hr 50min</p>
+		<p>Movie Storyline: When U.S. government operative Ethan Hunt (Tom Cruise) and his mentor</p>
+		<p>Jim Phelps (Jon Voight), go on a covert assignment that takes a disastrous turn, Jim is</p>
+		<p> killed, and Ethan becomes the prime murder suspect. Now a fugitive, Hunt recruits</p>
+		<p>brilliant hacker Luther Stickell (Ving Rhames) and maverick pilot Franz Krieger</p>
+		<p>to help him sneak into a heavily guarded CIA building to retrieve a confidential computer file.....</p>
             </div>
           </div>
         </div>
 
-        <div class="post" data-price="99" data-city="Portland" data-condition="bad">
+        <div class="post" data-price="99" data-city="Crime" data-condition="fair">
           <div class="post-contents">
             <div class="post-image-container">
-              <img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D22%2C0%2C654%2C431%3Bc0%3Dbaike80%2C5%2C5%2C80%2C26/sign=a49584889a45d688b74de8e499f04f32/7a899e510fb30f2425cfa1b8c095d143ad4b0337.jpg" alt="Hipsters">
+              <img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D22%2C0%2C654%2C431%3Bc0%3Dbaike80%2C5%2C5%2C80%2C26/sign=a49584889a45d688b74de8e499f04f32/7a899e510fb30f2425cfa1b8c095d143ad4b0337.jpg" alt="Assassins Creed">
             </div>
             <div class="post-info-container">
-              <a href="#" class="post-title">Assassins Creed Lineage</a> <span class="post-price">$99</span> <span class="post-city">(Portland)</span>
+              <a href="#" class="post-title">Assassins Creed(2007)</a> <span class="post-price">$99</span> <span class="post-city">Crime</span>
+		<p>1hr 45min</p>
+		<p>Movie Storyline: Assassin's Creed Origins. The story is set in Ptolemaic Egypt and</p>
+		<p>follows a Medjay named Bayek, whose fight to protect his people, leads him to create the</p>
+		<p>Secret Order the Assassins, with the game exploring the origin of their conflict with the</p>
+		<p>Knights of Templar, serving as a prequel to the entire series.</p>
             </div>
           </div>
         </div>
 
-       
+        <div class="post" data-price="180" data-city="Science fiction" data-condition="excellent">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="http://t3.gstatic.com/images?q=tbn:ANd9GcT24u-kDNdX_vpwbAkMyXGKDIz7m-h_QorA_o6m0q36GPHDgJmU" alt="Pacific Rim">
+            </div>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Pacific Rim(2018)</a> <span class="post-price">$180</span> <span class="post-city">Science fiction</span>
+		<p>2hrs 12min</p>
+		<p>Movie Storyline: Long ago, legions of monstrous creatures called Kaiju arose from the sea</p>
+		<p>bringing with them all-consuming war. To fight the Kaiju, mankind developed giant robots</p>
+		<p>called Jaegers, designed to be piloted by two humans locked together in a neural bridge</p>
+		<p>However, even the Jaegers are not enough to defeat the Kaiju, and humanity is on the verge of</p>
+		<p>defeat. Mankind's last hope now lies with a washed-up ex-pilot.......</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="post" data-price="80" data-city="Comedy" data-condition="good">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcStk75A_FacVc2kXVb8vdTAU6x-fmRjV2X0-6yxHF5iksQmzKwB" alt="Despicable Me">
+            </div>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Despicable Me(2010)</a> <span class="post-price">$80</span> <span class="post-city">Comedy</span>
+		<p>1hr 35mins</p>
+		<p>A man who delights in all things wicked, supervillain Gru (Steve Carell) hatches a plan</p>
+		<p>to steal the moon. Surrounded by an army of little yellow minions and his impenetrable arsena</p>
+	 	<p>of weapons and war machines, Gru makes ready to vanquish all who stand in his way.</p>
+		<p>But nothing in his calculations and groundwork has prepared him for his greatest</p>
+		<p>challenge: adorable orphan girls (Miranda Cosgrove, Dana Gaier, Elsie Fisher) who want to......</p>
+            </div>
+          </div>
+        </div>
 
       </section>
 
@@ -164,14 +233,14 @@
       <div class="modal-dialog">
 
         <div class="modal-header">
-          <h3>Sell something on Benny's List</h3>
+          <h3>Movie site add</h3>
           <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
         </div>
 
         <div class="modal-body">
 
           <div class="post-input-element">
-            <label for="post-text-input">Item description</label>
+            <label for="post-text-input">Add a movie by name</label>
             <input type="text" id="post-text-input"></input>
           </div>
 
@@ -186,32 +255,33 @@
           </div>
 
           <div class="post-input-element">
-            <label for="post-city-input">City</label>
+            <label for="post-city-input">Type</label>
             <input type="text" id="post-city-input">
           </div>
 
           <div class="post-input-element">
             <fieldset id="post-condition-fieldset" class="post-fieldset">
-              <legend>Condition</legend>
+              <legend>Rate</legend>
+
               <div>
-                <input type="radio" name="post-condition" id="post-condition-new" value="bad" checked>
-                <label for="post-condition-new">Bad</label>
-              </div>
-              <div>
-                <input type="radio" name="post-condition" id="post-condition-excellent" value="excellent">
-                <label for="post-condition-excellent">Excellent</label>
+                <input type="radio" name="post-condition" id="post-condition-excellent" value="excellent" checked>
+                <label for="post-condition-excellent">Excellent ⭐⭐⭐⭐⭐</label>
               </div>
               <div>
                 <input type="radio" name="post-condition" id="post-condition-good" value="good">
-                <label for="post-condition-good">Good</label>
+                <label for="post-condition-good">Good ⭐⭐⭐⭐</label>
               </div>
               <div>
                 <input type="radio" name="post-condition" id="post-condition-fair" value="fair">
-                <label for="post-condition-fair">Fair</label>
+                <label for="post-condition-fair">Fair ⭐⭐⭐</label>
               </div>
               <div>
-                <input type="radio" name="post-condition" id="post-condition-poor" value="terrible">
-                <label for="post-condition-poor">Terrible</label>
+                <input type="radio" name="post-condition" id="post-condition-new" value="new">
+                <label for="post-condition-new">Bad ⭐⭐</label>
+              </div>
+              <div>
+                <input type="radio" name="post-condition" id="post-condition-poor" value="poor">
+                <label for="post-condition-poor">Poor ⭐</label>
               </div>
             </fieldset>
           </div>
@@ -228,5 +298,4 @@
 
   </body>
 
-  <script src="index.js" charset="utf-8"></script>
 </html>
