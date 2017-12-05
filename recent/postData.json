@@ -1,0 +1,58 @@
+[
+  {
+    "price": 500,
+    "city": "Action",
+    "condition": "good",
+    "photoURL": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2810102360,3099581815&fm=27&gp=0.jpg",
+    "description": "Avengers: Age of Ultron(2015)"
+  },
+  {
+    "price": 20,
+    "city": "Horror",
+    "condition": "excellent",
+    "photoURL": "https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95131621ccbf6c81e33a24badd57da50/9345d688d43f8794ad53ba67d21b0ef41ad53ace.jpg",
+    "description": "Friday the 13th(1980)"
+  },
+  {
+    "price": 100,
+    "city": "Comedy",
+    "condition": "poor",
+    "photoURL": "https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike180%2C5%2C5%2C180%2C60/sign=32d7aaa7b1b7d0a26fc40ccfaa861d6c/b58f8c5494eef01fa5caded0e3fe9925bd317dcd.jpg",
+    "description": "Shaun of the Dead(2004)"
+  },
+  {
+    "price": 250,
+    "city": "Romans",
+    "condition": "fair",
+    "photoURL": "https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=8d2708eddd2a6059461de948495d5ffe/4034970a304e251f49e200dcad86c9177f3e53f9.jpg",
+    "description": "Titanic"
+  },
+  {
+    "price": 1,
+    "city": "Crime",
+    "condition": "bad",
+    "photoURL": "http://pic.baike.soso.com/ugc/baikepic2/13035/20160810053944-1683771096.jpg/800",
+    "description": "Mission: Impossible(1996)"
+  },
+  {
+    "price": 99,
+    "city": "Crime",
+    "condition": "fair",
+    "photoURL": "https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/crop%3D22%2C0%2C654%2C431%3Bc0%3Dbaike80%2C5%2C5%2C80%2C26/sign=a49584889a45d688b74de8e499f04f32/7a899e510fb30f2425cfa1b8c095d143ad4b0337.jpg",
+    "description": "Assassins Creed(2007)"
+  },
+  {
+    "price": 180,
+    "city": "Science fiction",
+    "condition": "excellent",
+    "photoURL": "http://t3.gstatic.com/images?q=tbn:ANd9GcT24u-kDNdX_vpwbAkMyXGKDIz7m-h_QorA_o6m0q36GPHDgJmU",
+    "description": "Pacific Rim(2018)"
+  },
+  {
+    "price": 80,
+    "city": "Comedy",
+    "condition": "good",
+    "photoURL": "http://t2.gstatic.com/images?q=tbn:ANd9GcStk75A_FacVc2kXVb8vdTAU6x-fmRjV2X0-6yxHF5iksQmzKwB",
+    "description": "Despicable Me"
+  }
+]
